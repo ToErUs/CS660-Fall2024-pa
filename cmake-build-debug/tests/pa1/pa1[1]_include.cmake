@@ -1,5 +1,0 @@
-if(EXISTS "/Users/heyadi/Projects/CS660/pa1/CS660-Fall2024-pa/cmake-build-debug/tests/pa1/pa1[1]_tests.cmake")
-  include("/Users/heyadi/Projects/CS660/pa1/CS660-Fall2024-pa/cmake-build-debug/tests/pa1/pa1[1]_tests.cmake")
-else()
-  add_test(pa1_NOT_BUILT pa1_NOT_BUILT)
-endif()
