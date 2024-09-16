@@ -14,7 +14,18 @@
 namespace db {
 class Database {
   // TODO pa1: add private members
-  
+
+  class PageNode {
+  public:
+    db::PageId pageId;
+    db::Page page;
+    bool dirty = false;
+
+    PageNode(const db::PageId &id, db::Page &&p) : pageId(id), page(std::move(p)) {}
+  };
+
+  std::vector<std::unique_ptr<DbFile>> files;
+
   BufferPool bufferPool;
 
   Database() = default;

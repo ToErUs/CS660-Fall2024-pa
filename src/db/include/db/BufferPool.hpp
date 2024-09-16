@@ -18,6 +18,30 @@ constexpr size_t DEFAULT_NUM_PAGES = 50;
 class BufferPool {
   // TODO pa1: add private members
 
+ class PageNode {
+
+ public:
+  db::PageId pageId;
+  int pindex;
+
+  bool dirty = false;
+
+  PageNode(const db::PageId &page_id, int pindex) : pageId(page_id), pindex(pindex) {}
+
+ };
+
+
+ int posIndex;
+ std::list<PageNode> pageNodes;
+
+ std::array<Page, DEFAULT_NUM_PAGES> pages;
+
+
+ void flushPageNode(PageNode& node);
+
+ const PageNode& findPage_const(const PageId& id) const;
+
+
 public:
   /**
    * @brief: Constructs a BufferPool object with the default number of pages.
