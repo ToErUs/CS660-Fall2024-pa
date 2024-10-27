@@ -1,6 +1,6 @@
 #include <db/LeafPage.hpp>
 #include <stdexcept>
-
+#include <cstring>
 using namespace db;
 
 LeafPage::LeafPage(Page &page, const TupleDesc &td, size_t key_index) : td(td), key_index(key_index) {

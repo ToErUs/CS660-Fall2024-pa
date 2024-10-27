@@ -1,7 +1,7 @@
 #include <db/IndexPage.hpp>
 #include<iostream>
 #include <stdexcept>
-
+#include <cstring>
 using namespace db;
 
 IndexPage::IndexPage(Page &page) {
